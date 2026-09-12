@@ -9,6 +9,14 @@ body,
   margin: 0;
 }
 
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: Inter, Roboto, Arial, sans-serif;
   background: #f6f8fc;
