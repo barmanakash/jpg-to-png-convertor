@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Inter, Roboto, Arial, sans-serif;
+  background: #f6f8fc;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(25, 118, 210, 0.08), transparent 28rem),
+    radial-gradient(circle at 90% 20%, rgba(156, 39, 176, 0.07), transparent 26rem),
+    #f6f8fc;
+}
+
+.main-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.drop-zone {
+  width: 100%;
+  min-height: 360px;
+  padding: 36px 20px;
+  border: 2px dashed rgba(25, 118, 210, 0.35);
+  border-radius: 18px;
+  background: #fbfdff;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 160ms ease;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-active {
+  border-color: #1976d2;
+  background: #f3f8ff;
+  transform: translateY(-1px);
+}
+
+.preview {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #f0f0f0;
+}
+
+.result-box {
+  padding: 18px;
+  border-radius: 14px;
+  background: #f3faf5;
+  border: 1px solid rgba(46, 125, 50, 0.18);
+}
+
+@media (max-width: 600px) {
+  .drop-zone {
+    min-height: 300px;
+  }
 }
