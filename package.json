@@ -2,6 +2,12 @@
   "name": "animationboy",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "eslint-plugin-jest": "25.3.0"
+  },
+  "resolutions": {
+    "eslint-plugin-jest": "25.3.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",

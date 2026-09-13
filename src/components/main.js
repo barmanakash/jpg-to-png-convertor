@@ -139,19 +139,30 @@ export default function Main() {
   const [error, setError] = useState("");
 
   /*
-   * Cleanup object URLs when the component is removed.
+   * Cleanup the preview object URL whenever it changes or the
+   * component unmounts. Kept in its own effect (separate from the
+   * result URL) so that finishing a conversion doesn't revoke the
+   * still-in-use preview URL.
    */
   useEffect(() => {
     return () => {
       if (previewUrl) {
         URL.revokeObjectURL(previewUrl);
       }
+    };
+  }, [previewUrl]);
 
+  /*
+   * Cleanup the converted result's object URL whenever it changes or
+   * the component unmounts.
+   */
+  useEffect(() => {
+    return () => {
       if (result?.url) {
         URL.revokeObjectURL(result.url);
       }
     };
-  }, [previewUrl, result]);
+  }, [result]);
 
   /*
    * Reset everything.
